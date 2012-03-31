@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'rails', '~> 2.3.11'
+gem 'rails', '~> 2.3.6'
 gem 'rake'
 
 gem 'mysql'
@@ -11,6 +11,7 @@ gem 'ffi', '0.6.3'
 gem 'hpricot', '0.8.2'
 gem 'imagesize', '0.1.1'
 gem 'rmagick'
+gem 'RedCloth'
 
 gem 'acts_as_tree'
 gem 'acts_as_list'

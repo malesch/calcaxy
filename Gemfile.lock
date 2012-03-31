@@ -14,6 +14,7 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.9)
     actionmailer (2.3.14)
       actionpack (= 2.3.14)
     actionpack (2.3.14)
@@ -62,6 +63,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   acts_as_list
   acts_as_tree
   attachment_fu!
@@ -72,7 +74,7 @@ DEPENDENCIES
   mysql
   pagify!
   passenger
-  rails (~> 2.3.11)
+  rails (~> 2.3.6)
   rake
   rmagick
   will_paginate (= 2.3.14)
