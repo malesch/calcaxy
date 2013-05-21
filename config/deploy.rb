@@ -6,8 +6,8 @@
 
 default_run_options[:pty] = true
 set :application, "calcaxy"
-set :deploy_to, "/home/deploy/#{application}"
-set :user, "deploy"
+set :deploy_to, "/home/deployer/#{application}"
+set :user, "deployer"
 set :use_sudo, false
 
 set :scm, "git"
@@ -18,9 +18,9 @@ set :scm_verbose, true
 # set :git_shallow_clone, 1
 # set :git_enable_submodules, 1
 
-role :app, "calclab.com"
-role :web, "calclab.com"
-role :db,  "calclab.com", :primary => true
+role :app, "192.81.220.244"
+role :web, "192.81.220.244"
+role :db,  "192.81.220.244", :primary => true
 
 after "deploy:update_code", "config:copy_shared_configurations"
 
