@@ -2,25 +2,30 @@
 # SOURCES setup users: http://www.viget.com/extend/building-an-environment-from-scratch-with-capistrano-2/
 # setup deploy: http://www.capify.org/getting-started/from-the-beginning/
 
-
-
 default_run_options[:pty] = true
+
+set :user, "<deploy user>"
+set :server_host, "<deploy server host>"
+set :server_port, "<deploy server port>"
+
 set :application, "calcaxy"
-set :deploy_to, "/home/deployer/#{application}"
-set :user, "deployer"
+set :deploy_to, "/home/deploy/#{application}"
 set :use_sudo, false
 
 set :scm, "git"
-set :repository,  "git://github.com/danigb/calcaxy.git"
+set :repository,  "git://github.com/malesch/calcaxy.git"
 set :branch, "master"
 set :deploy_via, :remote_cache
 set :scm_verbose, true
 # set :git_shallow_clone, 1
 # set :git_enable_submodules, 1
 
-role :app, "192.81.220.244"
-role :web, "192.81.220.244"
-role :db,  "192.81.220.244", :primary => true
+#server :server_host, :web, :app, :db, primary: true
+role :app, "#{server_host}"
+role :web, "#{server_host}"
+role :db,  "#{server_host}", :primary => true
+
+ssh_options[:port] = "#{server_port}"
 
 after "deploy:update_code", "config:copy_shared_configurations"
 
@@ -82,5 +87,3 @@ namespace :mysql do
       # delete file
     end
 end
-
-
