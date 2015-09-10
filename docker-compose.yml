@@ -1,0 +1,14 @@
+web:
+  build: .
+  ports:
+    - "3000:80"
+  links:
+    - db
+db:           
+  image: mysql:5.6
+  environment:             
+    MYSQL_USER: calcaxy    
+    MYSQL_PASSWORD: secret
+    MYSQL_DATABASE: calcaxy
+    MYSQL_ROOT_PASSWORD: very_secret
+

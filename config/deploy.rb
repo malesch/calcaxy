@@ -4,9 +4,9 @@
 
 default_run_options[:pty] = true
 
-set :user, "<deploy user>"
-set :server_host, "<deploy server host>"
-set :server_port, "<deploy server port>"
+set :user, "deploy"
+set :server_host, "ahi.calclab.com"
+set :server_port, "22123"
 
 set :application, "calcaxy"
 set :deploy_to, "/home/deploy/#{application}"
