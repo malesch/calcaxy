@@ -1,7 +1,6 @@
 log
 tmp
 nbproject
-config/database.yml
 config/git.yml
 config/pagify.yml
 db/*.sqlite3

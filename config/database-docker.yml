@@ -1,0 +1,22 @@
+defaults: &defaults
+  adapter: mysql2
+  encoding: utf8
+  username: <%= ENV['DB_ENV_MYSQL_USER'] %>
+  password: <%= ENV['DB_ENV_MYSQL_PASSWORD'] %>
+  pool: 5
+  host: <%= ENV['DB_PORT_3306_TCP_ADDR'] %>
+  port: <%= ENV['DB_PORT_3306_TCP_PORT'] %>
+
+development:
+  reconnect: false
+  database: calcaxy
+  <<: *defaults
+
+production:
+  database: calcaxy
+  <<: *defaults
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  timeout: 5000
