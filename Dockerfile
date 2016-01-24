@@ -6,7 +6,8 @@ RUN useradd -m -d /calcaxy calcaxy
 RUN apt-get update \
     && apt-get install -y libmysqld-dev \
     build-essential \
-    libmagick++-dev
+    libmagick++-dev \
+    vim
 
 # Run Bundle in a cache efficient way
 WORKDIR /tmp
